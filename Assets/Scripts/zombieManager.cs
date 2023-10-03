@@ -8,7 +8,7 @@ public class zombieManager : MonoBehaviour
     public int health;
     private Animator zombieAnimator;
     [SerializeField] private Transform[] pathPoints;
-    
+
     void Start()
     {
         zombieNavAgent = GetComponent<NavMeshAgent>();
@@ -16,7 +16,7 @@ public class zombieManager : MonoBehaviour
         health = 2;
     }
 
-    
+
     void Update()
     {
         if (zombieNavAgent.enabled)
@@ -35,14 +35,11 @@ public class zombieManager : MonoBehaviour
 
                 if (health == 2)
                     zombieNavAgent.SetDestination(pathPoints[pathCounter].position);
-
             }
         }
         else
         {
-            zombieAnimator.SetBool("idle",true);
+            zombieAnimator.SetBool("idle", true);
         }
-        
-        
     }
 }
